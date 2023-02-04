@@ -2,6 +2,7 @@ import {Nav, Navbar } from 'react-bootstrap';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Student from './student/Student';
 import Course from './course/Course';
+import Score from './score/Score';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Routes>
           <Route path='/student' element={<Student />}/>
           <Route path='/course' element={<Course />}/>
+          <Route path='/score' element={<Score />}/>
         </Routes>
       </Router>
     </div>
