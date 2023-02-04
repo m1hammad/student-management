@@ -19,12 +19,12 @@ export default function Student() {
     const [errorFamilyname, setErrorFamilyname] = useState(null);
 
     const Axios = axios.create({
-        baseURL: `http://localhost:3333/student/api/`
+        baseURL: `http://localhost:3333/api/`
     })
 
     const handleSubmit = e => {
         e.preventDefault();
-        Axios.post('/add', {firstName, familyName, birthDate: birthDate.toISOString()})
+        Axios.post('/student/add', {firstName, familyName, birthDate: birthDate.toISOString()})
         .then( (() => {
             setFirstName("");
             setFamilyName("");
@@ -63,7 +63,7 @@ export default function Student() {
     }
 
     useEffect( () => {
-        Axios.get(`/list`)
+        Axios.get(`/student/list`)
         .then( response => {
           // console.log(response.data) 
           setStudents(response.data);

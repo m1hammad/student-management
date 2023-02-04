@@ -21,8 +21,8 @@ mongoose.connect(process.env.mongoDB_URL, {
 () => console.log(`connected to mongodb at ${process.env.mongoDB_URL}`))
 
 // mount routes
-app.use('/student/api', studentRoute);
-app.use('/course/api', courseRoute);
-app.use('/score/api', scoreRoute);
+app.use('/api/student', studentRoute);
+app.use('/api/course', courseRoute);
+app.use('/api/score', scoreRoute);
 
 app.listen(PORT, () => console.log(`App is running on ${PORT}`))
