@@ -18,9 +18,9 @@ export default function Course() {
         .then( (() => {
             setCourseName("");
             setSuccessMessage(true);
-            setTimeout(() => setSuccessMessage(false), 5000)
+            setTimeout(() => setSuccessMessage(false), 5000);
         }))
-        .catch(error => console.log(error.response))
+        .catch(error => console.log(error.response));
     };
 
     useEffect( () => {
