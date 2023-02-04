@@ -65,7 +65,7 @@ export default function Student() {
     useEffect( () => {
         Axios.get(`/list`)
         .then( response => {
-          //console.log(response.data) 
+          console.log(response.data) 
           setStudents(response.data);
         })
         .catch( error => console.log(error))
