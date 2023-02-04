@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 require('dotenv').config();
 // import routes
-const studentRoute = require('./routes/students')
+const studentRoute = require('./routes/students');
+const courseRoute = require('./routes/courses');
 
 const PORT = process.env.PORT
 
@@ -20,5 +21,6 @@ mongoose.connect(process.env.mongoDB_URL, {
 
 // mount routes
 app.use('/api/student', studentRoute);
+app.use('/api/course', courseRoute);
 
 app.listen(PORT, () => console.log(`App is running on ${PORT}`))
