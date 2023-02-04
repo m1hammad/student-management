@@ -1,4 +1,6 @@
 import {Nav, Navbar } from 'react-bootstrap';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import Student from './student/Student';
 
 function App() {
   return (
@@ -22,6 +24,12 @@ function App() {
           </Nav.Item>
         </Nav>
       </Navbar>
+
+      <Router>
+        <Routes>
+          <Route path='/student' element={<Student />}/>
+        </Routes>
+      </Router>
     </div>
   );
 }
