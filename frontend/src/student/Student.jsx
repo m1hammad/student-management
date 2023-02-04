@@ -65,7 +65,7 @@ export default function Student() {
     useEffect( () => {
         Axios.get(`/list`)
         .then( response => {
-          console.log(response.data) 
+          // console.log(response.data) 
           setStudents(response.data);
         })
         .catch( error => console.log(error))
@@ -99,6 +99,26 @@ export default function Student() {
 
             </Form>
         </Container>
+        <Table bordered hover className='m-2'>
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>First Name</th>
+            <th>Family Name</th>
+            <th>Date of Birth</th>
+          </tr>
+        </thead>
+        <tbody>
+          {students.map((student, index) => (
+            <tr key={index}>
+              <td>{++index}</td>
+              <td>{student.firstName}</td>
+              <td>{student.familyName}</td>
+              <td>{moment(student.birthDate).format("DD/MM/YYYY")}</td>
+            </tr>
+          ))}
+        </tbody>
+        </Table>
     </div>
   )
 }
